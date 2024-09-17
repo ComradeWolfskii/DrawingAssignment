@@ -29,11 +29,12 @@ public class MainSceneHandler implements Initializable {
     public void setstage(Stage stage){
         mstage = stage;
     }
-    
+  
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+      
     }
     
     public void b1handler(){
@@ -42,9 +43,9 @@ public class MainSceneHandler implements Initializable {
     public void b2handler() throws IOException{
         System.out.println("B2 initialized");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShearScene.fxml"));
+        Parent root = loader.load();
         ShearSceneHandler controller = loader.getController();
         controller.setstage(mstage);
-        Parent root = loader.load();
         Scene scene = new Scene(root);
         mstage.setScene(scene);
     }
