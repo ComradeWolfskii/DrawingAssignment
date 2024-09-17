@@ -10,16 +10,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Shear;
+import javafx.stage.Stage;
 
 /**
  *
  * @author 6237975
  */
 public class ShearSceneHandler implements Initializable {
+     private Stage mstage;
+    public void setstage(Stage stage){
+        mstage = stage;
+    }
     @FXML Rectangle r2;
     @FXML Button bcode;
     @FXML Button bback;
@@ -39,6 +42,7 @@ public class ShearSceneHandler implements Initializable {
             code.setOpacity(0.0);
         }
     }
-    public void 
+    public void bbackhandler(){
+    }
     
 }

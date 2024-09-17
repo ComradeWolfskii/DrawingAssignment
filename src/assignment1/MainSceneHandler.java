@@ -42,6 +42,8 @@ public class MainSceneHandler implements Initializable {
     public void b2handler() throws IOException{
         System.out.println("B2 initialized");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShearScene.fxml"));
+        ShearSceneHandler controller = loader.getController();
+        controller.setstage(mstage);
         Parent root = loader.load();
         Scene scene = new Scene(root);
         mstage.setScene(scene);
