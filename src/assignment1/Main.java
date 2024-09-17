@@ -19,16 +19,21 @@ public class Main extends Application {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
+        Parent root = loader.load();
+        MainSceneHandler controller = loader.getController();
+        controller.setstage(stage);
         Scene mscene = new Scene(root);
         stage.setScene(mscene);
         stage.show();
     }
+    
     
 }
