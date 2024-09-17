@@ -13,7 +13,7 @@
 
 <Pane fx:id="p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.ShearSceneHandler">
    <children>
-      <Button fx:id="bcode" layoutX="73.0" layoutY="332.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" text="View Code">
+      <Button fx:id="bcode" layoutX="73.0" layoutY="332.0" mnemonicParsing="false" onAction="#bcodehandler" prefHeight="39.0" prefWidth="118.0" text="View Code">
          <font>
             <Font size="18.0" />
          </font>
@@ -48,7 +48,7 @@
       <Rectangle fx:id="r2" arcHeight="5.0" arcWidth="5.0" fill="#b6c9da" height="113.0" layoutX="182.0" layoutY="87.0" stroke="BLACK" strokeType="INSIDE" width="249.0" />
       <ImageView fx:id="code" fitHeight="121.0" fitWidth="402.0" layoutX="106.0" layoutY="228.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@shearcode.png" />
+            <Image url="@ShearCode.png" />
          </image>
       </ImageView>
    </children>

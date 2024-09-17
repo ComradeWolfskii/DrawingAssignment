@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
@@ -22,7 +23,7 @@ public class ShearSceneHandler implements Initializable {
     @FXML Rectangle r2;
     @FXML Button bcode;
     @FXML Button bback;
-    @FXML Pane p;
+    @FXML ImageView code;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -31,5 +32,13 @@ public class ShearSceneHandler implements Initializable {
         Shear shear = new Shear(0.5, 0.5); 
         r2.getTransforms().add(shear);
     }
+    public void bcodehandler(){
+        if (code.getOpacity() == 0){
+            code.setOpacity(1);
+        } else{
+            code.setOpacity(0.0);
+        }
+    }
+    public void 
     
 }
