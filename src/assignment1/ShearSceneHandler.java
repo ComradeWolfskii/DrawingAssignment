@@ -29,8 +29,6 @@ public class ShearSceneHandler implements Initializable {
         mstage = stage;
     }
     @FXML Rectangle r2;
-    @FXML Button bcode;
-    @FXML Button bback;
     @FXML ImageView code;
     @FXML Text tback;
     
