@@ -51,5 +51,10 @@
             <Image url="@ShearCode.png" />
          </image>
       </ImageView>
+      <Text fx:id="tback" layoutX="325.0" layoutY="312.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure you want to go back?">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

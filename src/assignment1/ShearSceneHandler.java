@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.scene.transform.Shear;
 import javafx.stage.Stage;
 
@@ -31,7 +32,9 @@ public class ShearSceneHandler implements Initializable {
     @FXML Button bcode;
     @FXML Button bback;
     @FXML ImageView code;
+    @FXML Text tback;
     
+    Boolean check =false;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -47,12 +50,18 @@ public class ShearSceneHandler implements Initializable {
         }
     }
     public void bbackhandler() throws IOException{
+        tback.setOpacity(1);
+        if (check == false){
+            check=true;
+        }
+        else{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
         Parent root = loader.load();
         MainSceneHandler controller = loader.getController();
         controller.setstage(mstage);
         Scene scene = new Scene(root);
         mstage.setScene(scene);
+        }
     }
     
 }
