@@ -4,6 +4,8 @@
  */
 package assignment1;
 
+
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,8 +14,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Shear;
@@ -30,9 +34,8 @@ public class ShearSceneHandler implements Initializable {
     }
     @FXML Rectangle r2;
     @FXML ImageView code;
-    @FXML Text tback;
+    @FXML TextField txtprompt;
     
-    Boolean check =false;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -48,18 +51,22 @@ public class ShearSceneHandler implements Initializable {
         }
     }
     public void bbackhandler() throws IOException{
-        tback.setOpacity(1);
-        if (check == false){
-            check=true;
+        txtprompt.setOpacity(1);
+        txtprompt.setEditable(true);
+        
+        if (txtprompt.getText().toLowerCase().contentEquals("y")){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
+            Parent root = loader.load();
+            MainSceneHandler controller = loader.getController();
+            controller.setstage(mstage);
+            Scene scene = new Scene(root);
+            mstage.setScene(scene);
+            }
+        else if (txtprompt.getText().toLowerCase().contentEquals("n")){
+            txtprompt.setOpacity(0);
+            txtprompt.setEditable(false);
+            txtprompt.setText("");
         }
-        else{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
-        Parent root = loader.load();
-        MainSceneHandler controller = loader.getController();
-        controller.setstage(mstage);
-        Scene scene = new Scene(root);
-        mstage.setScene(scene);
         }
-    }
     
 }
