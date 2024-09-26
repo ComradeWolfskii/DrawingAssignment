@@ -37,10 +37,16 @@ public class MainSceneHandler implements Initializable {
       
     }
     
-    public void b1handler(){
+    public void b1handler() throws IOException {
         System.out.println("B1 initialized");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SvgScene.fxml"));
+        Parent root = loader.load();
+        SvgSceneHandler controller = loader.getController();
+        controller.setStage(mstage);
+        Scene scene = new Scene(root);
+        mstage.setScene(scene);
     }
-    public void b2handler() throws IOException{
+    public void b2handler() throws IOException {
         System.out.println("B2 initialized");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShearScene.fxml"));
         Parent root = loader.load();
