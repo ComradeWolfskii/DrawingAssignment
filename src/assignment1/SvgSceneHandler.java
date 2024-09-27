@@ -14,6 +14,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 
 /**
@@ -27,12 +30,28 @@ public class SvgSceneHandler implements Initializable {
         mstage = stage;
     }
     
+    @FXML Pane pane;
     @FXML ImageView code;
     @FXML TextField confirmationPrompt;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        SVGPath svgPath = new SVGPath();
+        String path = "M 50 100 C 20 100, 20 200, 50 200 L 150 200 C 120 200, 120 100, 150 100 Z";
+        svgPath.setContent(path);
+        svgPath.setStroke(Color.BLACK);
+        svgPath.setFill(Color.CRIMSON);
+        pane.getChildren().add(svgPath);
         
+        pane.widthProperty().addListener((obs, oldWidth, newWidth) -> {
+            double centerX = (newWidth.doubleValue() / 2) - (svgPath.getBoundsInLocal().getWidth() / 2);
+            svgPath.setLayoutX(centerX - 25);
+        });
+        
+        pane.heightProperty().addListener((obs, oldHeight, newHeight) -> {
+            double centerY = (newHeight.doubleValue() / 2) - (svgPath.getBoundsInLocal().getHeight() / 2);
+            svgPath.setLayoutY(centerY - 150);
+        });
     }
     
     public void buttonCodeHandler() {
@@ -41,6 +60,7 @@ public class SvgSceneHandler implements Initializable {
         } else {
             code.setOpacity(0.0);
         }
+        code.toFront();
     }
     
     public void buttonBackHandler() throws IOException {
@@ -60,6 +80,5 @@ public class SvgSceneHandler implements Initializable {
             confirmationPrompt.setEditable(false);
             confirmationPrompt.setText("");
         }
-      
     }
 }

@@ -2,16 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.SvgSceneHandler">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.SvgSceneHandler">
    <children>
       <Text layoutX="206.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SVG Shape" textAlignment="CENTER" wrappingWidth="188.490234375">
          <font>
@@ -44,8 +44,10 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fx:id="code" fitHeight="104.0" fitWidth="354.0" layoutX="123.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="code" fitHeight="238.0" fitWidth="451.0" layoutX="82.0" layoutY="56.0" opacity="0.0" pickOnBounds="true">
+         <image>
+            <Image url="@svgcode.png" />
+         </image></ImageView>
       <TextField fx:id="confirmationPrompt" layoutX="371.0" layoutY="271.0" opacity="0.0" prefHeight="25.0" prefWidth="181.0" promptText="Do you want to go back? (Y/N)" />
-      <SVGPath fx:id="SVGshape" content="M 50 100&#10;C 20 100, 20 200, 50 200&#10;L 150 200&#10;C 100 200, 100 100, 150 100&#10;Z" fill="#da7b5e" layoutX="211.0" layoutY="-26.0" stroke="BLACK" />
    </children>
 </Pane>
